@@ -55,13 +55,13 @@ export const CampaignTron = props => {
         className="h3-responsive text-muted"
         style={{ wordWrap: 'break-word' }}
       >
-        Address of Campaign's Smart Contract: {props.contractAddress}
+        本活动智能合约地址: {props.contractAddress}
       </h3>
       <h4
         className="h3-responsive text-muted"
         style={{ wordWrap: 'break-word' }}
       >
-        Managed by: {props.manager}
+        管理者: {props.manager}
       </h4>
     </div>
   );
