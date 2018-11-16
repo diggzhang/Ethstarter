@@ -4,7 +4,8 @@
   "description": "A decentralized application, harnessing the potential of Ethereum, to provide a better solution to the existing kickstarter system.",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "deploy": "rm -rf ./build && node compile.js && node deploy.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +20,10 @@
   "dependencies": {
     "fs-extra": "^7.0.0",
     "ganache-cli": "^6.1.8",
+    "keythereum": "^1.0.4",
     "solc": "^0.4.24",
-    "truffle-hdwallet-provider": "0.0.6",
+    "truffle-hdwallet-provider": "^0.0.6",
+    "truffle-hdwallet-provider-privkey": "^0.3.0",
     "web3": "^1.0.0-beta.35"
   },
   "devDependencies": {
