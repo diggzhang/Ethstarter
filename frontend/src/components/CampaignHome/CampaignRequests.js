@@ -63,10 +63,10 @@ class CampaignRequests extends Component {
     } catch (err) {
       if (
         err.message ===
-        'No "from" address specified in neither the given options, nor the default options.'
+        '没有from地址！'
       ) {
         err.message =
-          'Metamask (operating over Rinkeby n/w) is required to approve! Please check if you are signed into metamask.';
+        '请检查是否签入metamask!'
       }
       this.setState({
         errorMessage: err.message,
