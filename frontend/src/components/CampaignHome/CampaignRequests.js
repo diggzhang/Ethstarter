@@ -130,34 +130,34 @@ class CampaignRequests extends Component {
             this.state.processingIndex == index ? (
               <button className="btn btn-primary btn-sm disabled animated fadeIn">
                 <i className="fa fa-refresh fa-spin mr-3"> </i>
-                Approving
+                申请确认中
               </button>
             ) : (
               <button
                 className="btn btn-primary animated fadeIn"
                 onClick={() => this.onApprove(index)}
               >
-                Approve
+                准奏
               </button>
             )}
           </td>
           <td>
             {request.complete ? (
               <button className="btn btn-mdb-color btn disabled animated fadeIn">
-                Finalized!
+                已发！
               </button>
             ) : this.state.finalizeLoading &&
             this.state.processingIndex == index ? (
               <button className="btn btn-mdb-color btn-sm disabled animated fadeIn">
                 <i className="fa fa-refresh fa-spin mr-3"> </i>
-                Finalizing
+                确定中
               </button>
             ) : (
               <button
                 className="btn btn-mdb-color animated fadeIn"
                 onClick={() => this.onFinalize(index)}
               >
-                Finalize
+                发工资
               </button>
             )}
           </td>
@@ -172,12 +172,12 @@ class CampaignRequests extends Component {
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Description</th>
-            <th scope="col">Amount(ether)</th>
-            <th scope="col">Recipient</th>
-            <th scope="col">Approval Count</th>
-            <th scope="col">#BackerOnly</th>
-            <th scope="col">#ManagerOnly</th>
+            <th scope="col">申请理由</th>
+            <th scope="col">提币金额(OC)</th>
+            <th scope="col">接收人</th>
+            <th scope="col">投资人确认次数</th>
+            <th scope="col">#限投资者</th>
+            <th scope="col">#限管理员</th>
           </tr>
         </thead>
         <tbody>{this.renderRow()}</tbody>

@@ -39,27 +39,27 @@ class CampaignDetails extends Component {
     const items = [
       {
         title: web3.utils.fromWei(this.state.summary.balance, 'ether'),
-        meta: 'Campaign balance (ether)',
+        meta: '余额 (OC)',
         description:
-          'Reflects the amount of money this campaign has left to spend'
+          '目前众筹池所剩余额'
       },
       {
         title: this.state.summary.minimumContribution,
-        meta: 'Minimum Contribution (wei)',
+        meta: '最小投资 (OC)',
         description:
-          'One must contribute atleast this much wei to this campaign in order to become a backer'
+          '至少投资这么多，才能成为该项目投资人哦'
       },
       {
         title: this.state.summary.backersCount,
-        meta: 'Number of Backers',
+        meta: '投资人',
         description:
-          'Number of people who have already donated to this campaign'
+          '该项目已经投币的金主们'
       },
       {
         title: this.state.summary.requestCount,
-        meta: 'Number of Requests',
+        meta: '经费申请',
         description:
-          "A request tries to withdraw money from campaign's smart contract. Finalizing a request requires approval from backers"
+          "请求从该活动智能合约中提取资金。需要得到投资者的批准。"
       }
     ];
 
@@ -148,7 +148,7 @@ class CampaignDetails extends Component {
     const form = (
       <form onSubmit={this.onSubmit}>
         <div className="md-form">
-          <h4>Contribute to the Campaign</h4>
+          <h4>投币支持</h4>
           <input
             type="text"
             id="form1"
@@ -172,7 +172,7 @@ class CampaignDetails extends Component {
               type="submit"
               className="btn btn-lg btn-primary mt-4 animated fadeIn"
             >
-              Contribute !
+              赏！
             </button>
           )}
         </div>
@@ -182,10 +182,10 @@ class CampaignDetails extends Component {
     const breadcrum = (
       <nav className="breadcrumb bg-white">
         <Link to="/" className="breadcrumb-item">
-          Ethstarter
+          葱众筹
         </Link>
 
-        <span className="breadcrumb-item active">Campaign Details</span>
+        <span className="breadcrumb-item active">众筹活动细节</span>
       </nav>
     );
 
@@ -200,7 +200,7 @@ class CampaignDetails extends Component {
           <div className="text-center mt-5">
             <Link to={`${this.props.match.url}/requests`}>
               <button className="btn btn-lg btn-info w-50">
-                View Requests
+              查看经费申请
               </button>
             </Link>
           </div>

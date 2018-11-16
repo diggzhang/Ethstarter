@@ -21,7 +21,7 @@ export class ShowCard extends Component {
           </h3>
           <h5 className="card-title text-muted">{this.props.address}</h5>
           <Link to={'campaigns/' + this.props.route}>
-            <button className="btn btn-info float-right">View Campaign</button>
+            <button className="btn btn-info float-right">查看当前活动</button>
           </Link>
         </div>
       </div>
@@ -55,13 +55,13 @@ export const CampaignTron = props => {
         className="h3-responsive text-muted"
         style={{ wordWrap: 'break-word' }}
       >
-        Address of Campaign's Smart Contract: {props.contractAddress}
+        本活动智能合约地址: {props.contractAddress}
       </h3>
       <h4
         className="h3-responsive text-muted"
         style={{ wordWrap: 'break-word' }}
       >
-        Managed by: {props.manager}
+        管理者: {props.manager}
       </h4>
     </div>
   );
@@ -73,8 +73,7 @@ export const Jumbotron = props => {
       <div
         className="jumbotron jumbotron-fluid"
         style={{
-          backgroundImage:
-            'url(https://avatars.mds.yandex.net/get-pdb/985790/b812a497-5256-4af1-b79d-9190d692e788/orig)'
+          backgroundColor: '#1696ea'
         }}
       >
         <div className="container text-center">
