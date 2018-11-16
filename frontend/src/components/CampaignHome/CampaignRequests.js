@@ -177,7 +177,7 @@ class CampaignRequests extends Component {
             <th scope="col">接收人</th>
             <th scope="col">投资人确认次数</th>
             <th scope="col">#限投资者</th>
-            <th scope="col">#限管理员</th>
+            <th scope="col">#限管理员t</th>
           </tr>
         </thead>
         <tbody>{this.renderRow()}</tbody>
@@ -229,15 +229,15 @@ class CampaignRequests extends Component {
     const breadcrum = (
       <nav className="breadcrumb bg-white">
         <Link to="/" className="breadcrumb-item">
-          Ethstarter
+          葱众筹
         </Link>
         <Link
           to={`/campaigns/${this.props.match.params.id}`}
           className="breadcrumb-item"
         >
-          Campaign Details
+          众筹详情
         </Link>
-        <span className="breadcrumb-item active">Campaign Requests</span>
+        <span className="breadcrumb-item active">经费申请</span>
       </nav>
     );
 
@@ -246,7 +246,7 @@ class CampaignRequests extends Component {
         {breadcrum}
         <div className="clearfix">
           <Link to={this.props.match.url + '/create-request'}>
-            <button className="btn btn-info float-right">Create Request</button>
+            <button className="btn btn-info float-right">发起申请</button>
           </Link>
         </div>
         <div className="mt-5">{this.renderTable()}</div>

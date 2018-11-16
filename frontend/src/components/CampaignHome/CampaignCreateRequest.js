@@ -86,12 +86,12 @@ class CampaignCreateRequest extends Component {
       <form onSubmit={this.onSubmit}>
         <div className="md-form text-center">
           <h2>
-            Create a Request <span className="text-muted">#Manager-Only </span>
+            发起申请 <span className="text-muted">#限管理员 </span>
           </h2>
           <div className="md-form mt-5">
             <input
               type="text"
-              placeholder="Description"
+              placeholder="申请理由"
               className="form-control form-control-lg mt-4 w-50 m-auto "
               value={this.state.description}
               onChange={event =>
@@ -102,7 +102,7 @@ class CampaignCreateRequest extends Component {
           <div className="md-form">
             <input
               type="text"
-              placeholder="Value in ether"
+              placeholder="洋葱币数"
               className="form-control form-control-lg mt-4 w-50 m-auto"
               value={this.state.value}
               onChange={event => this.setState({ value: event.target.value })}
@@ -111,7 +111,7 @@ class CampaignCreateRequest extends Component {
           <div className="md-form">
             <input
               type="text"
-              placeholder="Recipient's Address"
+              placeholder="提款者钱包地址"
               className="form-control form-control-lg mt-4 w-50 m-auto"
               value={this.state.recipientAddress}
               onChange={event =>
@@ -126,7 +126,7 @@ class CampaignCreateRequest extends Component {
                 disabled
               >
                 <i className="fa fa-refresh fa-spin mr-3"> </i>
-                Creating...
+                正在创建...
               </button>
             </div>
           ) : (
@@ -134,7 +134,7 @@ class CampaignCreateRequest extends Component {
               type="submit"
               className="btn btn-lg btn-primary mt-4 animated fadeIn"
             >
-              Create !
+              创建 !
             </button>
           )}
         </div>
@@ -144,21 +144,21 @@ class CampaignCreateRequest extends Component {
     const breadcrum = (
       <nav className="breadcrumb bg-white">
         <Link to="/" className="breadcrumb-item">
-          Ethstarter
+          葱众筹
         </Link>
         <Link
           to={`/campaigns/${this.props.contractAddress}`}
           className="breadcrumb-item"
         >
-          Campaign Details
+          众筹详情
         </Link>
         <Link
           to={`/campaigns/${this.props.contractAddress}/requests`}
           className="breadcrumb-item"
         >
-          Campaign Requests
+          资金申请
         </Link>
-        <span className="breadcrumb-item active">Create Request</span>
+        <span className="breadcrumb-item active">创建申请</span>
       </nav>
     );
 
