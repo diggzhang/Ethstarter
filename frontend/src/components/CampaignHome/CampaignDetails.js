@@ -90,7 +90,7 @@ class CampaignDetails extends Component {
         parseInt(this.state.summary.minimumContribution, 10)
       ) {
         throw Error(
-          "You must contribute more than the campaign's specified minimum in order to become a backer."
+          "如果想成为金主，至少投资本项目的最低限额"
         );
       }
 
@@ -107,10 +107,10 @@ class CampaignDetails extends Component {
     } catch (err) {
       if (
         err.message ===
-        'No "from" address specified in neither the given options, nor the default options.'
+        '没有from地址！'
       ) {
         err.message =
-          'Metamask (operating over Rinkeby n/w) is required to contribute! Please check if you are signed into metamask.';
+          '请检查是否签入metamask!';
       }
       this.setState({ errorMessage: err.message, loading: false });
     }
@@ -126,7 +126,7 @@ class CampaignDetails extends Component {
           className="alert alert-danger mt-4 z-depth-2 text-center animated fadeIn"
           role="alert"
         >
-          <strong>Error:</strong> {this.state.errorMessage}
+          <strong>错误:</strong> {this.state.errorMessage}
         </div>
       );
     }
@@ -138,9 +138,9 @@ class CampaignDetails extends Component {
           style={{ fontSize: '20px' }}
           role="alert"
         >
-          Yay! You successfully contributed to the campaign. <br />
-          <strong style={{ fontSize: '25px' }}>You are now a backer. </strong>
-          Therefore, you have the ability to participate in request approvals.
+          恭喜！你已经成为本项目的投资人 <br />
+          <strong style={{ fontSize: '25px' }}>金主大大. </strong>
+          有资格参与项目资金申请的审核。
         </div>
       );
     }
@@ -153,7 +153,7 @@ class CampaignDetails extends Component {
             type="text"
             id="form1"
             className="form-control form-control-lg mt-4 w-25 m-auto text-center"
-            placeholder="Amount in ether"
+            placeholder="洋葱币数"
             value={this.state.value}
             onChange={event => this.setState({ value: event.target.value })}
           />
@@ -164,7 +164,7 @@ class CampaignDetails extends Component {
                 disabled
               >
                 <i className="fa fa-refresh fa-spin mr-3"> </i>
-                Contributing...
+                投币中...
               </button>
             </div>
           ) : (
