@@ -24,11 +24,11 @@ class CreateCampaign extends Component {
 
     try {
       if (this.state.minimumContribution == 0) {
-        throw Error('Please enter some minimum contribution value');
+        throw Error('请输入最小贡献金额');
       }
 
       if (!this.state.campaignName) {
-        throw Error('Please enter a name for the campaign');
+        throw Error('请输入众筹名称');
       }
 
       const accounts = await web3.eth.getAccounts();
@@ -47,10 +47,10 @@ class CreateCampaign extends Component {
     } catch (err) {
       if (
         err.message ===
-        'No "from" address specified in neither the given options, nor the default options.'
+        '没有from地址！'
       ) {
         err.message =
-          'Metamask (operating over Rinkeby n/w) is required to create campaign! Please check if you are signed into metamask.';
+          '请检查是否签入metamask!';
       }
       this.setState({ errorMessage: err.message, loading: false });
     }
@@ -66,7 +66,7 @@ class CreateCampaign extends Component {
           className="alert alert-danger mt-4 z-depth-2 text-center animated fadeIn"
           role="alert"
         >
-          <strong>Error: </strong>
+          <strong>错误: </strong>
           {this.state.errorMessage}
         </div>
       );
@@ -79,15 +79,15 @@ class CreateCampaign extends Component {
           style={{ fontSize: '20px' }}
           role="alert"
         >
-          Cheers! Your campaign is successfully created and campaign's smart
-          contract is deployed on the Ethereum blockchain. <br />
-          That's the address:
+          恭喜！你的众筹已创建成功。 
+          <br />
+          区块链地址是:
           <strong className="ml-2" style={{ fontSize: '24px' }}>
             {this.state.campaign_address}
           </strong>
           <Link to={'campaigns/' + this.state.campaign_address}>
             <button type="button" className="btn btn-success float-right mt-3">
-              查看活动
+              查看众筹
             </button>
           </Link>
         </div>
@@ -97,10 +97,10 @@ class CreateCampaign extends Component {
     const breadcrum = (
       <nav className="breadcrumb bg-white">
         <Link to="/" className="breadcrumb-item">
-          Ethstarter
+         葱众筹 
         </Link>
 
-        <span className="breadcrumb-item active">Create Campaign</span>
+        <span className="breadcrumb-item active">创建</span>
       </nav>
     );
 
@@ -108,18 +108,17 @@ class CreateCampaign extends Component {
       <div className="container mt-5 mb-5 animated fadeIn">
         {breadcrum}
         <div className="ml-3">
-          <h1 className="mt-3">Create Campaign</h1>
+          <h1 className="mt-3">创建葱众筹</h1>
 
           <form onSubmit={this.onSubmit}>
-            <div className="md-form mt-5">
-              <h4>Minimum Contribution</h4>
+            <div className="md-form m t-5">
+              <h4>最小贡献</h4>
               <h6>
-                Amount that an individual has to contribute in order to be a
-                backer
+              个人为了成为一个赞助者而必须做出的贡献
               </h6>
               <input
                 type="text"
-                placeholder="Enter the amount in denominations of wei"
+                placeholder="以OC为单位输入金额"
                 id="form1"
                 className="form-control form-control-lg mt-4"
                 value={this.state.minimumContribution}
@@ -129,7 +128,7 @@ class CreateCampaign extends Component {
               />
               <input
                 type="text"
-                placeholder="Name of the Campaign"
+                placeholder="众筹名字"
                 id="form1"
                 className="form-control form-control-lg mt-4"
                 value={this.state.campaignName}
@@ -145,11 +144,10 @@ class CreateCampaign extends Component {
                     disabled
                   >
                     <i className="fa fa-refresh fa-spin mr-3"> </i>
-                    Creating...
+                    创建...
                   </button>{' '}
                   <span style={{ fontSize: '20px' }} className="ml-3">
-                    Hold on! We are deploying your campaign's smart contract on
-                    the Ethereum blockchain...
+                    稍等！正在部署你的众筹到区块链中。。。
                   </span>
                 </div>
               ) : (
@@ -157,7 +155,7 @@ class CreateCampaign extends Component {
                   type="submit"
                   className="btn btn-lg btn-primary mt-4 animated fadeIn"
                 >
-                  Create !
+                  创建 !
                 </button>
               )}
               {errorAlert} {successAlert}
