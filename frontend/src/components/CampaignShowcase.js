@@ -75,7 +75,7 @@ class CampaignShowcase extends Component {
             </button>
           </Link> */}
         </div>
-        <h1 className="mt-2">正在众筹...</h1>
+        {/* <h1 className="mt-2">正在众筹...</h1> */}
         <div className="mt-5">{this.state.renderCampaigns}</div>
         {corsError} {networkError}
       </div>
