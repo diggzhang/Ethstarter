@@ -208,7 +208,7 @@ class CampaignRequests extends Component {
           style={{ fontSize: '20px' }}
           role="alert"
         >
-          You have successfully approved the request!
+          您已批准该次请求！
         </div>
       );
     }
@@ -220,8 +220,7 @@ class CampaignRequests extends Component {
           style={{ fontSize: '20px' }}
           role="alert"
         >
-          Request is successfully finalized and the payment is transfered to the
-          recipient.
+          请求已成功完成，洋葱币将转移给施工者。
         </div>
       );
     }
