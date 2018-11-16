@@ -9,16 +9,15 @@ class Landing extends Component {
     return (
       <div className="animated fadeIn">
         <Jumbotron
-          title="Ethstarter: Bringing creative projects to life!"
-          buttonText="Start a Campaign"
+          title="葱爆众筹: 为了乐趣而生!"
+          buttonText="发起葱众筹"
         >
-          Ethstarter is a decentralized platform where independent creators and
-          passionate backers come together to bring ideas to life.
-          <br /> At Ethstarter you can create campaigns and back your favorites
-          by contributing ethers. Individuals who are backing the projects gain
-          explicit rights to approve funds transfer requests, therefore,
-          Ethstarter provides funds control back to backers.{' '}
-          <strong>#BackersConsensus</strong>
+          葱爆众筹是一个去中心化的协作平台，将创作者、需求者聚到一起构建有趣的社区。
+          <br /> 在葱爆众筹，你可以发布自己的需求：一道看不懂的题目、一节想听的葱味课等等。贡献你的洋葱币，吸引创作者为你独家定制。
+          一切都是去中心化的接受社区监督，人人都参与者. 
+          <br />
+          {' '}
+          <strong>#洋葱智能合约</strong>
         </Jumbotron>
         <Switch>
           <Route path="/create-campaign" exact component={CreateCampaign} />

@@ -35,20 +35,21 @@ class CampaignShowcase extends Component {
 
   render() {
     let networkError = this.state.otherNetwork ? (
-      <div
-        className="alert alert-danger z-depth-2 text-center animated fadeIn"
-        role="alert"
-        style={{ fontSize: '25px', marginTop: '75px' }}
-      >
-        <div className="mt-3 mb-3">
-          You are on the{' '}
-          <strong>{this.state.otherNetwork.toUpperCase()}</strong> network. At
-          this moment in time, Ethstarter operates only on the{' '}
-          <strong>Rinkeby</strong> network. Therefore, in order to use
-          Ethstarter, please switch the network type in your Metamask extension
-          to Rinkeby.
-        </div>
-      </div>
+      // <div
+      //   className="alert alert-danger z-depth-2 text-center animated fadeIn"
+      //   role="alert"
+      //   style={{ fontSize: '25px', marginTop: '75px' }}
+      // >
+      //   <div className="mt-3 mb-3">
+      //     You are on the{' '}
+      //     <strong>{this.state.otherNetwork.toUpperCase()}</strong> network. At
+      //     this moment in time, Ethstarter operates only on the{' '}
+      //     <strong>Rinkeby</strong> network. Therefore, in order to use
+      //     Ethstarter, please switch the network type in your Metamask extension
+      //     to Rinkeby.
+      //   </div>
+      // </div>
+      <div></div>
     ) : null;
 
     let corsError = this.state.firefoxCORSError ? (
@@ -68,13 +69,13 @@ class CampaignShowcase extends Component {
     return (
       <div className="container mt-5 mb-5 animated fadeIn">
         <div className="clearfix">
-          <Link to="/create-campaign">
+          {/* <Link to="/create-campaign">
             <button type="button" className="btn btn-primary float-right">
-              Create Campaign
+              发起众筹
             </button>
-          </Link>
+          </Link> */}
         </div>
-        <h1 className="mt-2">Open Campaigns</h1>
+        <h1 className="mt-2">正在众筹...</h1>
         <div className="mt-5">{this.state.renderCampaigns}</div>
         {corsError} {networkError}
       </div>

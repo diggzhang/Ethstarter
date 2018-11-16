@@ -21,7 +21,7 @@ export class ShowCard extends Component {
           </h3>
           <h5 className="card-title text-muted">{this.props.address}</h5>
           <Link to={'campaigns/' + this.props.route}>
-            <button className="btn btn-info float-right">View Campaign</button>
+            <button className="btn btn-info float-right">查看当前活动</button>
           </Link>
         </div>
       </div>

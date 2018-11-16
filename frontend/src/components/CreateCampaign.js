@@ -87,7 +87,7 @@ class CreateCampaign extends Component {
           </strong>
           <Link to={'campaigns/' + this.state.campaign_address}>
             <button type="button" className="btn btn-success float-right mt-3">
-              View Campaign
+              查看活动
             </button>
           </Link>
         </div>
