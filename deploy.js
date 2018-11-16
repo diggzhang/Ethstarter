@@ -3,9 +3,9 @@ const Web3 = require('web3');
 const compiledCampaignFactory = require('./build/CampaignFactory.json');
 
 const mnemonic =
-  'chief outside coast artefact enrich pelican raw top yellow witness slogan glide';
+  'judge exhaust security crowd pattern crop roast open kingdom memory ask jar';
 const networkUrl =
-  'https://rinkeby.infura.io/v3/b4e2b3bf723f4985ae36bc838089e50d';
+  'http://127.0.0.1:8545';
 
 const provider = new HDWalletProvider(mnemonic, networkUrl);
 const web3 = new Web3(provider);

@@ -73,8 +73,7 @@ export const Jumbotron = props => {
       <div
         className="jumbotron jumbotron-fluid"
         style={{
-          backgroundImage:
-            'url(https://avatars.mds.yandex.net/get-pdb/985790/b812a497-5256-4af1-b79d-9190d692e788/orig)'
+          backgroundColor: '#1696ea'
         }}
       >
         <div className="container text-center">
