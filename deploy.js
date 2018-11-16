@@ -1,19 +1,28 @@
-const HDWalletProvider = require('truffle-hdwallet-provider');
+const HDWalletProvider = require("truffle-hdwallet-provider-privkey");
+
 const Web3 = require('web3');
 const compiledCampaignFactory = require('./build/CampaignFactory.json');
 
 const mnemonic =
   'judge exhaust security crowd pattern crop roast open kingdom memory ask jar';
-const networkUrl =
-  'http://127.0.0.1:8545';
+const privateKey =
+  '0x69a6eb5983cb8d3cf6f8461bf8ff613ada0421a398437dd4e62e62aa51a557f8';
 
-const provider = new HDWalletProvider(mnemonic, networkUrl);
+const privKeys = ['69a6eb5983cb8d3cf6f8461bf8ff613ada0421a398437dd4e62e62aa51a557f8']; // private keys
+
+const networkUrl =
+  'http://10.8.8.63:8545';
+
+const provider = new HDWalletProvider(privKeys, networkUrl);
 const web3 = new Web3(provider);
+
+web3.eth.net.getNetworkType().then(console.log);
 
 var accounts, lottery;
 
 const deploy = async () => {
   accounts = await web3.eth.getAccounts();
+  console.log(accounts)
 
   lottery = await new web3.eth.Contract(
     JSON.parse(compiledCampaignFactory.interface)
@@ -23,7 +32,8 @@ const deploy = async () => {
     })
     .send({
       from: accounts[0],
-      gas: '2000000'
+      gas: '10000000',
+      chainId: 456719 
     });
 
   console.log('Contract Deployed! Contract Address: ', lottery.options.address);
@@ -31,3 +41,4 @@ const deploy = async () => {
 };
 
 deploy();
+
