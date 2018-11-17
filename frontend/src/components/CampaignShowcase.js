@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { ShowCard } from './ui-components/mdb-stateless-components';
-import { Link } from 'react-router-dom';
 
 import factory from '../ethereum/factory';
 import web3 from '../ethereum/web3';
@@ -75,7 +74,7 @@ class CampaignShowcase extends Component {
             </button>
           </Link> */}
         </div>
-        <h1 className="mt-2">正在众筹...</h1>
+        {/* <h1 className="mt-2">正在众筹...</h1> */}
         <div className="mt-5">{this.state.renderCampaigns}</div>
         {corsError} {networkError}
       </div>

@@ -127,7 +127,7 @@ class CampaignRequests extends Component {
           </td>
           <td>
             {request.complete ? null : this.state.approvalLoading &&
-            this.state.processingIndex == index ? (
+            this.state.processingIndex === index ? (
               <button className="btn btn-primary btn-sm disabled animated fadeIn">
                 <i className="fa fa-refresh fa-spin mr-3"> </i>
                 申请确认中
@@ -147,7 +147,7 @@ class CampaignRequests extends Component {
                 已发！
               </button>
             ) : this.state.finalizeLoading &&
-            this.state.processingIndex == index ? (
+            this.state.processingIndex === index ? (
               <button className="btn btn-mdb-color btn-sm disabled animated fadeIn">
                 <i className="fa fa-refresh fa-spin mr-3"> </i>
                 确定中
@@ -208,7 +208,7 @@ class CampaignRequests extends Component {
           style={{ fontSize: '20px' }}
           role="alert"
         >
-          You have successfully approved the request!
+          您已批准该次请求！
         </div>
       );
     }
@@ -220,8 +220,7 @@ class CampaignRequests extends Component {
           style={{ fontSize: '20px' }}
           role="alert"
         >
-          Request is successfully finalized and the payment is transfered to the
-          recipient.
+          请求已成功完成，洋葱币将转移给施工者。
         </div>
       );
     }

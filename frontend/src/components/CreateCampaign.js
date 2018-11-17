@@ -23,7 +23,7 @@ class CreateCampaign extends Component {
     });
 
     try {
-      if (this.state.minimumContribution == 0) {
+      if (this.state.minimumContribution === 0) {
         throw Error('请输入最小贡献金额');
       }
 
