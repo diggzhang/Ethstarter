@@ -127,7 +127,7 @@ class CampaignRequests extends Component {
           </td>
           <td>
             {request.complete ? null : this.state.approvalLoading &&
-            this.state.processingIndex == index ? (
+            this.state.processingIndex === index ? (
               <button className="btn btn-primary btn-sm disabled animated fadeIn">
                 <i className="fa fa-refresh fa-spin mr-3"> </i>
                 申请确认中
@@ -147,7 +147,7 @@ class CampaignRequests extends Component {
                 已发！
               </button>
             ) : this.state.finalizeLoading &&
-            this.state.processingIndex == index ? (
+            this.state.processingIndex === index ? (
               <button className="btn btn-mdb-color btn-sm disabled animated fadeIn">
                 <i className="fa fa-refresh fa-spin mr-3"> </i>
                 确定中

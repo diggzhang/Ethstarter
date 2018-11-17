@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { ShowCard } from './ui-components/mdb-stateless-components';
-import { Link } from 'react-router-dom';
 
 import factory from '../ethereum/factory';
 import web3 from '../ethereum/web3';
