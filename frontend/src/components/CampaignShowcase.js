@@ -70,11 +70,11 @@ class CampaignShowcase extends Component {
         <div className="clearfix">
           {/* <Link to="/create-campaign">
             <button type="button" className="btn btn-primary float-right">
-              发起众筹
+              发起定制
             </button>
           </Link> */}
         </div>
-        {/* <h1 className="mt-2">正在众筹...</h1> */}
+        {/* <h1 className="mt-2">正在定制...</h1> */}
         <div className="mt-5">{this.state.renderCampaigns}</div>
         {corsError} {networkError}
       </div>
