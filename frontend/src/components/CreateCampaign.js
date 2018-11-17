@@ -28,7 +28,7 @@ class CreateCampaign extends Component {
       }
 
       if (!this.state.campaignName) {
-        throw Error('请输入众筹名称');
+        throw Error('请输入定制名称');
       }
 
       const accounts = await web3.eth.getAccounts();
@@ -50,7 +50,7 @@ class CreateCampaign extends Component {
         '没有from地址！'
       ) {
         err.message =
-          '请检查是否签入metamask!';
+        '请检查是否签入metamask!';
       }
       this.setState({ errorMessage: err.message, loading: false });
     }
@@ -79,7 +79,7 @@ class CreateCampaign extends Component {
           style={{ fontSize: '20px' }}
           role="alert"
         >
-          恭喜！你的众筹已创建成功。 
+          恭喜！你的定制已创建成功。 
           <br />
           区块链地址是:
           <strong className="ml-2" style={{ fontSize: '24px' }}>
@@ -87,7 +87,7 @@ class CreateCampaign extends Component {
           </strong>
           <Link to={'campaigns/' + this.state.campaign_address}>
             <button type="button" className="btn btn-success float-right mt-3">
-              查看众筹
+              查看定制
             </button>
           </Link>
         </div>
@@ -97,7 +97,7 @@ class CreateCampaign extends Component {
     const breadcrum = (
       <nav className="breadcrumb bg-white">
         <Link to="/" className="breadcrumb-item">
-         葱众筹 
+         葱定制 
         </Link>
 
         <span className="breadcrumb-item active">创建</span>
@@ -108,7 +108,7 @@ class CreateCampaign extends Component {
       <div className="container mt-5 mb-5 animated fadeIn">
         {breadcrum}
         <div className="ml-3">
-          <h1 className="mt-3">创建葱众筹</h1>
+          <h1 className="mt-3">创建葱定制</h1>
 
           <form onSubmit={this.onSubmit}>
             <div className="md-form m t-5">
@@ -128,7 +128,7 @@ class CreateCampaign extends Component {
               />
               <input
                 type="text"
-                placeholder="众筹名字"
+                placeholder="定制名字"
                 id="form1"
                 className="form-control form-control-lg mt-4"
                 value={this.state.campaignName}
@@ -147,7 +147,7 @@ class CreateCampaign extends Component {
                     创建...
                   </button>{' '}
                   <span style={{ fontSize: '20px' }} className="ml-3">
-                    稍等！正在部署你的众筹到区块链中。。。
+                    稍等！正在部署你的定制到区块链中。。。
                   </span>
                 </div>
               ) : (

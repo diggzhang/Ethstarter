@@ -228,13 +228,13 @@ class CampaignRequests extends Component {
     const breadcrum = (
       <nav className="breadcrumb bg-white">
         <Link to="/" className="breadcrumb-item">
-          葱众筹
+          葱定制
         </Link>
         <Link
           to={`/campaigns/${this.props.match.params.id}`}
           className="breadcrumb-item"
         >
-          众筹详情
+          定制详情
         </Link>
         <span className="breadcrumb-item active">经费申请</span>
       </nav>

@@ -41,10 +41,10 @@ class CampaignCreateRequest extends Component {
     } catch (err) {
       if (
         err.message ===
-        'No "from" address specified in neither the given options, nor the default options.'
+        '没有from地址！'
       ) {
         err.message =
-          'Metamask (operating over Rinkeby n/w) is required to create campaign request! Please check if you are signed into metamask.';
+        '请检查是否签入metamask!';
       }
       this.setState({ errorMessage: err.message, loading: false });
     }
@@ -73,11 +73,10 @@ class CampaignCreateRequest extends Component {
           role="alert"
         >
           <strong style={{ fontSize: '22px' }}>
-            Request is successfully created!
+            请求创建成功!
           </strong>
           <br />
-          Please wait for a majority approval(over 50% should approve) from
-          backers.
+            请等待大多数支持者的批准。
         </div>
       );
     }
@@ -144,13 +143,13 @@ class CampaignCreateRequest extends Component {
     const breadcrum = (
       <nav className="breadcrumb bg-white">
         <Link to="/" className="breadcrumb-item">
-          葱众筹
+          葱定制
         </Link>
         <Link
           to={`/campaigns/${this.props.contractAddress}`}
           className="breadcrumb-item"
         >
-          众筹详情
+          定制详情
         </Link>
         <Link
           to={`/campaigns/${this.props.contractAddress}/requests`}
